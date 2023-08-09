@@ -8,21 +8,31 @@
 - docker-compose up --build
 
 > Stop all containers
-docker stop $(docker ps -a -q); 
+- docker stop $(docker ps -a -q); 
 
 > Remove all containers
-docker rm $(docker ps -a -q);
+- docker rm $(docker ps -a -q);
 
 > Stop and Remove all containers
-docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
+- docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
 > Remove all images
-docker rmi $(docker images -q);
+- docker rmi $(docker images -q);
+
+> Cada vez que alterar dotenv , docker-compose ou Dockerfile
+- docker-compose build
+
+> Ligar/Desligar o container
+- docker-compose up/down
 
 
 ### Django
 > Executando Django
 - python djangoapp/manage.py {comandos}
+
+> Criando app dentro do docker
+- docker-compose run djangoapp python manage.py startapp blog
+- docker-compose run djangoapp python manage.py makemigrations
 
 ### Comandos GIT
 > Iniciando Git
