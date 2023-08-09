@@ -25,6 +25,9 @@
 > Ligar/Desligar o container
 - docker-compose up/down
 
+> Consultar Container
+- docker ps
+
 
 ### Django
 > Executando Django

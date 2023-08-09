@@ -30,9 +30,7 @@
     "--indent-size=2",
     "--max-line-length=300"
   ],
-  "python.linting.flake8Args": [
-    "--max-line-length=300"
-  ],
+  "python.linting.flake8Args": ["--max-line-length=300"],
   "python.linting.flake8Enabled": false,
   "python.linting.pylintEnabled": false,
   "python.linting.enabled": false,
@@ -51,4 +49,5 @@
   "python.analysis.typeCheckingMode": "basic",
   "cSpell.enabled": true,
   "python.formatting.provider": "none",
+  "window.autoDetectColorScheme": false
 }
