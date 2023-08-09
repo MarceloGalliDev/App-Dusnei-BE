@@ -43,6 +43,7 @@ RUN python -m venv /venv && \
 
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
+# o env ele vai verificar primeiro na pasta scripts e segundo no venv/bin
 ENV PATH="/scripts:/venv/bin:$PATH"
 
 # -- até aqui é o USER:ROOT --

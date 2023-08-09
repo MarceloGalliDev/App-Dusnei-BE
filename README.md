@@ -4,6 +4,21 @@
 > Estrutura
 - criamos uma pasta para receber a estrutura Django, pois a pasta raiz é onde estruturaremos os dados de config do Docker
 
+> Build Docker
+- docker-compose up --build
+
+> Stop all containers
+docker stop $(docker ps -a -q); 
+
+> Remove all containers
+docker rm $(docker ps -a -q);
+
+> Stop and Remove all containers
+docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
+
+> Remove all images
+docker rmi $(docker images -q);
+
 
 ### Django
 > Executando Django

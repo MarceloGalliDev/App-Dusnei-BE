@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  djangoapp:
+    container_name: djangoapp
+    # Build é o path do arquivo Dockerfile, podemos incluir o ./Dockerfile se necessário
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    # Volume é o espelho dos arquivos no meu computador, tudo que for alterado aqui será refletido no container
+    volumes:
+      - ./djangoapp:/djangoapp
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - ./dotenv_files/.env
+    # Aqui o django é depedente do funcionamento d MySQL
+    depends_on:
+      - psql
+
+  psql:
+    container_name: psql
+    image: postgres:13-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
